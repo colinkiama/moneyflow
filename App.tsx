@@ -22,7 +22,7 @@ const App = () => {
           paddingLeft: 12,
           paddingRight: 12,
         }}>
-        <Text style>Getting Started</Text>
+        <Text>Getting Started</Text>
       </View>
     </SafeAreaView>
   );
