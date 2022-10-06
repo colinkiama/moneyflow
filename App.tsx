@@ -8,8 +8,8 @@
  * @format
  */
 
-import React, {type PropsWithChildren} from 'react';
-import {SafeAreaView, ScrollView, StatusBar, Text, View} from 'react-native';
+import React from 'react';
+import {SafeAreaView, StatusBar, Text, View} from 'react-native';
 
 const App = () => {
   return (
