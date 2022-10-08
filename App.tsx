@@ -9,12 +9,17 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar, Text, View} from 'react-native';
+import {SafeAreaView, StatusBar, View} from 'react-native';
+import {Appbar, Text} from 'react-native-paper';
 
 const App = () => {
   return (
     <SafeAreaView style={{height: '100%'}}>
-      <StatusBar />
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
+      <Appbar>
+        <Appbar.Content title="Getting Started" />
+      </Appbar>
+
       <View
         style={{
           height: '100%',
@@ -22,7 +27,7 @@ const App = () => {
           paddingLeft: 12,
           paddingRight: 12,
         }}>
-        <Text>Getting Started</Text>
+        <Text variant="headlineMedium">What's your Monthly Income?</Text>
       </View>
     </SafeAreaView>
   );
