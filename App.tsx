@@ -31,7 +31,7 @@ const App = () => {
         <TextInput
           mode="outlined"
           label="Amount (£)"
-          placeholder="23000"
+          placeholder="1738"
           style={{marginTop: 24}}
         />
       </View>
