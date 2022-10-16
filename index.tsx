@@ -3,20 +3,29 @@
  */
 
 import * as React from 'react';
-import {AppRegistry} from 'react-native';
+import {AppRegistry, StatusBar} from 'react-native';
 import {Provider as PaperProvider, Appbar} from 'react-native-paper';
 import {name as appName} from './app.json';
-import App from './App';
+import {ExpensesView, IncomeView} from './views/GettingStarted';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
+const pageTitleMap = {
+  GettingStartedIncome: 'Getting Started',
+  GettingStartedExpenses: 'Getting Started',
+};
+
+const getPageTitle = routeName => {
+  return routeName in pageTitleMap ? pageTitleMap[routeName] : 'Page';
+};
+
 function CustomNavigationBar({navigation, back, route}) {
   return (
     <Appbar>
       {back ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
-      <Appbar.Content title={route.name} />
+      <Appbar.Content title={getPageTitle(route.name)} />
     </Appbar>
   );
 }
@@ -24,13 +33,18 @@ function CustomNavigationBar({navigation, back, route}) {
 export default function Main() {
   return (
     <PaperProvider>
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Getting Started"
+          initialRouteName="GettingStartedIncome"
           screenOptions={{
             header: props => <CustomNavigationBar {...props} />,
           }}>
-          <Stack.Screen name="Getting Started" component={App} />
+          <Stack.Screen name="GettingStartedIncome" component={IncomeView} />
+          <Stack.Screen
+            name="GettingStartedExpenses"
+            component={ExpensesView}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

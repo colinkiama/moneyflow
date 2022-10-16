@@ -9,13 +9,12 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar, View} from 'react-native';
-import {Appbar, Button, Text, TextInput} from 'react-native-paper';
+import {SafeAreaView, View} from 'react-native';
+import {Button, Text, TextInput} from 'react-native-paper';
 
-const App = props => {
+const ExpensesView = ({navigation}) => {
   return (
     <SafeAreaView style={{height: '100%'}}>
-      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       <View
         style={{
           height: '100%',
@@ -24,13 +23,25 @@ const App = props => {
           paddingRight: 12,
           marginTop: 12,
         }}>
-        <Text variant="headlineSmall">What's your Monthly Income?</Text>
+        <Text variant="headlineSmall">What are your monthly expnses?</Text>
+        <TextInput mode="outlined" label="Name" style={{marginTop: 24}} />
         <TextInput
           mode="outlined"
           label="Amount (£)"
           placeholder="1738"
           style={{marginTop: 24}}
         />
+
+        <Button
+          style={{
+            marginTop: 24,
+          }}
+          icon="plus"
+          mode="contained"
+          contentStyle={{flexDirection: 'row-reverse'}}
+          onPress={() => navigation.navigate('Getting Started - Expenses')}>
+          Next
+        </Button>
       </View>
 
       <View style={{alignItems: 'center', marginBottom: 40}}>
@@ -38,7 +49,7 @@ const App = props => {
           icon="arrow-right"
           mode="contained"
           contentStyle={{flexDirection: 'row-reverse'}}
-          onPress={() => console.log('Go to next page!')}>
+          onPress={() => navigation.navigate('Getting Started - Expenses')}>
           Next
         </Button>
       </View>
@@ -46,4 +57,4 @@ const App = props => {
   );
 };
 
-export default App;
+export default ExpensesView;
