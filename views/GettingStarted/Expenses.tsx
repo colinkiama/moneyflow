@@ -35,12 +35,13 @@ const ExpensesView = ({navigation}) => {
         <Button
           style={{
             marginTop: 24,
+            alignSelf: 'flex-start',
           }}
           icon="plus"
           mode="contained"
           contentStyle={{flexDirection: 'row-reverse'}}
           onPress={() => navigation.navigate('Getting Started - Expenses')}>
-          Next
+          Add
         </Button>
       </View>
 
