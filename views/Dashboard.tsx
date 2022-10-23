@@ -10,7 +10,7 @@
 
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import {Button, Text, TextInput} from 'react-native-paper';
+import {Button, Card, Text, TextInput} from 'react-native-paper';
 
 const DashboardView = ({navigation}) => {
   return (
@@ -24,12 +24,16 @@ const DashboardView = ({navigation}) => {
           marginTop: 12,
         }}>
         <Text variant="headlineSmall">Home</Text>
-        <TextInput
-          mode="outlined"
-          label="Amount (£)"
-          placeholder="1738"
-          style={{marginTop: 24}}
-        />
+        <Card>
+          <Card.Title title="Main Account" />
+          <Card.Content>
+            <View>
+              {/* Turn this into it's own component */}
+              <Text>£250.42</Text>
+              <Text>Remaining</Text>
+            </View>
+          </Card.Content>
+        </Card>
       </View>
     </SafeAreaView>
   );
