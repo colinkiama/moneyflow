@@ -7,6 +7,7 @@ import {AppRegistry, StatusBar} from 'react-native';
 import {Provider as PaperProvider, Appbar} from 'react-native-paper';
 import {name as appName} from './app.json';
 import {ExpensesView, IncomeView} from './views/GettingStarted';
+import DashboardView from './views/Dashboard';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -15,6 +16,7 @@ const Stack = createNativeStackNavigator();
 const pageTitleMap = {
   GettingStartedIncome: 'Getting Started',
   GettingStartedExpenses: 'Getting Started',
+  Dashboard: 'Dashboard',
 };
 
 const getPageTitle = routeName => {
@@ -45,6 +47,7 @@ export default function Main() {
             name="GettingStartedExpenses"
             component={ExpensesView}
           />
+          <Stack.Screen name="Dashboard" component={DashboardView} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

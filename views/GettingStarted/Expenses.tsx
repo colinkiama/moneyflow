@@ -40,7 +40,7 @@ const ExpensesView = ({navigation}) => {
           icon="plus"
           mode="contained"
           contentStyle={{flexDirection: 'row-reverse'}}
-          onPress={() => navigation.navigate('Getting Started - Expenses')}>
+          onPress={() => console.log('Add expense')}>
           Add
         </Button>
       </View>
@@ -50,7 +50,7 @@ const ExpensesView = ({navigation}) => {
           icon="arrow-right"
           mode="contained"
           contentStyle={{flexDirection: 'row-reverse'}}
-          onPress={() => navigation.navigate('Getting Started - Expenses')}>
+          onPress={() => navigation.navigate('Dashboard')}>
           Next
         </Button>
       </View>
