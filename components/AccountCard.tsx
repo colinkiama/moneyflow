@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import {Card, Text} from 'react-native-paper';
+import {Card, ProgressBar, Text} from 'react-native-paper';
 
 const AccountCard = (props)_=> {
   return (
@@ -11,6 +11,9 @@ const AccountCard = (props)_=> {
           {/* Turn this into it's own component */}
           <Text variant="titleLarge">{props.heading.title}</Text>
           <Text variant="labelSmall">{props.heading.label}</Text>
+          {props.type === 'main' &&
+            <ProgressBar progress={props.progress ?? 0} />
+          }
         </View>
       </Card.Content>
     </Card>

@@ -10,7 +10,7 @@
 
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import {Button, Text, TextInput} from 'react-native-paper';
+import {Text} from 'react-native-paper';
 import AccountCard from '../components/AccountCard';
 
 const DashboardView = ({navigation}) => {
@@ -25,16 +25,7 @@ const DashboardView = ({navigation}) => {
           marginTop: 12,
         }}>
         <Text variant="headlineSmall">Home</Text>
-        {/*<Card>
-          <Card.Title title="Main Account" />
-          <Card.Content>
-            <View>
-               Turn this into it's own component 
-              <Text>£250.42</Text>
-              <Text>Remaining</Text>
-            </View>
-          </Card.Content>
-        </Card>*/}
+
         <AccountCard
           title="Main Account"
           heading={{title: '£250.42', label: 'Reamaining'}}
